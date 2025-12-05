@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Bella",
+    "age": 0.3,
+    "breed": "Domestic Shorthair",
+    "gender": "Female",
+    "color": "Grey ,Black and White",
+    "description": "Bella is a tiny bundle of energy! At just 4 months old, she loves chasing feather toys and climbing scratching posts. She needs a home with lots of playtime.",
+    "imageFile": "Bella.jpg",
+    "medicalHistory": {
+      "vaccinations": "First round (FVRCP) received",
+      "spayedNeutered": false,
+      "healthNotes": "Too young for spaying yet. Needs booster shots in 4 weeks."
+    }
+  },
+  {
+    "name": "Charlie",
+    "age": 2,
+    "breed": "Maine Coon Mix",
+    "gender": "Male",
+    "color": "Tabby",
+    "description": "Charlie is a gentle giant. He has large paws and an even bigger heart. He loves to lounge on the sofa and watch birds out the window.",
+    "imageFile": "Charlie.jpg",
+    "medicalHistory": {
+      "vaccinations": "Up to date",
+      "spayedNeutered": true,
+      "healthNotes": "Healthy weight, but watch portion sizes."
+    }
+  },
+  {
+    "name": "Luna",
+    "age": 0.5,
+    "breed": "Bombay",
+    "gender": "Female",
+    "color": "Black",
+    "description": "A sleek and mysterious 6-month-old kitten. Luna is a bit shy at first but becomes a purring machine once she trusts you. Perfect for a quiet home.",
+    "imageFile": "Luna.jpg",
+    "medicalHistory": {
+      "vaccinations": "Fully vaccinated",
+      "spayedNeutered": true,
+      "healthNotes": "Perfect health."
+    }
+  },
+  {
+    "name": "Simba",
+    "age": 5,
+    "breed": "Orange Tabby",
+    "gender": "Male",
+    "color": "Orange",
+    "description": "Simba lives up to his name—he is the king of the house! He is very vocal, loves food, and is always looking for a lap to sleep on.",
+    "imageFile": "Simba.jpg",
+    "medicalHistory": {
+      "vaccinations": "Up to date",
+      "spayedNeutered": true,
+      "healthNotes": "Recent dental cleaning completed. Teeth look great."
+    }
+  },
+  {
+    "name": "Daisy",
+    "age": 1.5,
+    "breed": "Calico",
+    "gender": "Female",
+    "color": "Calico",
+    "description": "Daisy has a colorful coat and a sassy personality. She is independent but loves to greet you at the door when you come home from work.",
+    "imageFile": "Daisy.jpg",
+    "medicalHistory": {
+      "vaccinations": "Up to date",
+      "spayedNeutered": true,
+      "healthNotes": "No known allergies."
+    }
+  },
+  {
+    "name": "Oreo",
+    "age": 3,
+    "breed": "Tuxedo",
+    "gender": "Male",
+    "color": "Black and White",
+    "description": "Oreo is always dressed for a formal occasion. He is very smart, knows how to open doors, and gets along great with other cats.",
+    "imageFile": "Oreo.jpg",
+    "medicalHistory": {
+      "vaccinations": "Up to date",
+      "spayedNeutered": true,
+      "healthNotes": "Very active and healthy."
+    }
+  },
+  {
+    "name": "Nala",
+    "age": 0.4,
+    "breed": "Siamese Mix",
+    "gender": "Female",
+    "color": "Cream and Brown",
+    "description": "Nala is a 5-month-old beauty with striking blue eyes. She is very talkative and will follow you around the house telling you about her day.",
+    "imageFile": "Nala.jpg",
+    "medicalHistory": {
+      "vaccinations": "Due for final booster",
+      "spayedNeutered": true,
+      "healthNotes": "Slightly underweight, on kitten food diet."
+    }
+  },
+  {
+    "name": "Milo",
+    "age": 1,
+    "breed": "Ragdoll",
+    "gender": "Male",
+    "color": "White and Grey",
+    "description": "Milo goes completely limp when you pick him up. He is the ultimate cuddle buddy and has never scratched anyone in his life.",
+    "imageFile": "Milo.jpg",
+    "medicalHistory": {
+      "vaccinations": "Up to date",
+      "spayedNeutered": true,
+      "healthNotes": "Excellent health. Coat requires weekly brushing."
+    }
+  },
+  {
+    "name": "Coco",
+    "age": 8,
+    "breed": "Persian",
+    "gender": "Female",
+    "color": "White",
+    "description": "Coco is a senior lady looking for a retirement home. She requires daily brushing for her magnificent coat and prefers a calm environment without loud noises.",
+    "imageFile": "Coco.jpg",
+    "medicalHistory": {
+      "vaccinations": "Up to date",
+      "spayedNeutered": true,
+      "healthNotes": "Mild arthritis in back legs, takes supplements."
+    }
+  },
+  {
+    "name": "Loki",
+    "age": 0.8,
+    "breed": "Bengal Mix",
+    "gender": "Male",
+    "color": "Spotted Brown",
+    "description": "Loki is full of mischief! He is high-energy, loves water, and needs an owner who can keep up with his active lifestyle.",
+    "imageFile": "Loki.jpg",
+    "medicalHistory": {
+      "vaccinations": "Up to date",
+      "spayedNeutered": true,
+      "healthNotes": "High energy, needs active play."
+    }
+  },
+  {
+    "name": "Willow",
+    "age": 4,
+    "breed": "Russian Blue",
+    "gender": "Female",
+    "color": "Grey",
+    "description": "Willow is quiet, observant, and loyal. She bonds deeply with one person and will be your constant shadow.",
+    "imageFile": "Willow.jpg",
+    "medicalHistory": {
+      "vaccinations": "Up to date",
+      "spayedNeutered": true,
+      "healthNotes": "Prone to anxiety in new places."
+    }
+  },
+  {
+    "name": "Ginger",
+    "age": 6,
+    "breed": "Domestic Longhair",
+    "gender": "Female",
+    "color": "Orange",
+    "description": "It is rare to find a female orange cat, but Ginger is one of a kind! She is the neighborhood mom and loves taking care of kittens.",
+    "imageFile": "Ginger.jpg",
+    "medicalHistory": {
+      "vaccinations": "Up to date",
+      "spayedNeutered": true,
+      "healthNotes": "Healthy."
+    }
+  }
+]
