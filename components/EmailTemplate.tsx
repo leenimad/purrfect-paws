@@ -57,7 +57,7 @@ export const EmailTemplate: React.FC<EmailTemplateProps> = ({
     </div>
 
     <p style={{ marginTop: '20px' }}>
-      Please log in to your <a href="http://localhost:3000/admin">Admin Dashboard</a> to approve or reject this application.
+      Please log in to your <a href="https://purrfect-paws-seven.vercel.app/admin">Admin Dashboard</a> to approve or reject this application.
     </p>
   </div>
 );
