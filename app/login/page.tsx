@@ -26,7 +26,7 @@ export default function LoginPage() {
       setError(error.message);
       setLoading(false);
     } else {
-      router.back(); // Go back to the previous page (the cat profile)
+      router.push('/'); // Go back to the previous page (the cat profile)
     }
   };
 
