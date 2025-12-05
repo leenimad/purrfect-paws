@@ -17,9 +17,9 @@
     "dotenv": "^17.2.3",
     "mongodb": "^7.0.0",
     "mongoose": "^8.20.1",
-    "next": "16.0.3",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
+    "next": "^16.0.7",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-hot-toast": "^2.6.0",
     "resend": "^6.5.2"
   },
