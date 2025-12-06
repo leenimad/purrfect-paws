@@ -27,8 +27,93 @@ export default function AddCatPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setUploading(true);
+
+  //   // 1. Get Current User (Shelter/Admin)
+  //   const { data: { user } } = await supabase.auth.getUser();
+
+  //   if (!user) {
+  //       alert("You must be logged in to add a cat.");
+  //       router.push('/login');
+  //       return;
+  //   }
+
+  //   const form = e.currentTarget;
+  //   const fileInput = Array.from(form.elements).find((element) => 
+  //     (element as HTMLInputElement).name === 'photo'
+  //   ) as HTMLInputElement;
+
+  //   const file = fileInput.files?.[0];
+
+  //   if (!file) {
+  //        toast.error('Please select an image first!');
+  //     setUploading(false);
+  //     return;
+  //   }
+
+  //   try {
+  //     // 2. Upload Image to Supabase
+  //     const fileExt = file.name.split('.').pop();
+  //     const fileName = `${Date.now()}.${fileExt}`;
+  //     const { error: uploadError } = await supabase.storage
+  //       .from('cat-images')
+  //       .upload(fileName, file);
+
+  //     if (uploadError) throw uploadError;
+
+  //     // 3. Get Public URL
+  //     const { data: urlData } = supabase.storage
+  //       .from('cat-images')
+  //       .getPublicUrl(fileName);
+
+  //     const publicUrl = urlData.publicUrl;
+
+  //     // 4. Save to MongoDB
+  //     const res = await fetch('/api/cats', {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({
+  //         name: formData.name,
+  //         breed: formData.breed,
+  //         age: formData.age,
+  //         color: formData.color,
+  //         gender: formData.gender,
+  //         description: formData.description,
+  //         imageUrls: [publicUrl],
+  //         ownerId: user.id,
+  //         ownerEmail: user.email,
+  //         // Construct the nested medicalHistory object
+  //         medicalHistory: {
+  //           vaccinations: formData.vaccinations,
+  //           spayedNeutered: formData.spayedNeutered === 'Yes', // Convert string to boolean
+  //           healthNotes: formData.healthNotes
+  //         }
+  //       }),
+  //     });
+
+  //     if (!res.ok) {
+  //       const errorData = await res.json();
+  //       throw new Error(errorData.error || 'Failed to save cat');
+  //     }
+
+  //      toast.success('Cat added successfully! 🐱');
+  //     router.push('/dashboard'); // Go to dashboard to see it
+
+  //   } catch (error: any) {
+  //     console.error(error);
+  //     toast.error(error.message);
+  //   } finally {
+  //     setUploading(false);
+  //   }
+  // };
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // FIX: Capture the form element IMMEDIATELY, before any await
+    const form = e.currentTarget;
+    
     setUploading(true);
 
     // 1. Get Current User (Shelter/Admin)
@@ -40,7 +125,7 @@ export default function AddCatPage() {
         return;
     }
 
-    const form = e.currentTarget;
+    // Now we use the 'form' variable we saved earlier, instead of e.currentTarget
     const fileInput = Array.from(form.elements).find((element) => 
       (element as HTMLInputElement).name === 'photo'
     ) as HTMLInputElement;
@@ -48,7 +133,7 @@ export default function AddCatPage() {
     const file = fileInput.files?.[0];
 
     if (!file) {
-         toast.error('Please select an image first!');
+      toast.error('Please select an image first!');
       setUploading(false);
       return;
     }
@@ -84,10 +169,9 @@ export default function AddCatPage() {
           imageUrls: [publicUrl],
           ownerId: user.id,
           ownerEmail: user.email,
-          // Construct the nested medicalHistory object
           medicalHistory: {
             vaccinations: formData.vaccinations,
-            spayedNeutered: formData.spayedNeutered === 'Yes', // Convert string to boolean
+            spayedNeutered: formData.spayedNeutered === 'Yes',
             healthNotes: formData.healthNotes
           }
         }),
@@ -98,8 +182,8 @@ export default function AddCatPage() {
         throw new Error(errorData.error || 'Failed to save cat');
       }
 
-       toast.success('Cat added successfully! 🐱');
-      router.push('/dashboard'); // Go to dashboard to see it
+      toast.success('Cat added successfully! 🐱');
+      router.push('/dashboard'); 
 
     } catch (error: any) {
       console.error(error);
@@ -108,7 +192,6 @@ export default function AddCatPage() {
       setUploading(false);
     }
   };
-
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-gray-100">

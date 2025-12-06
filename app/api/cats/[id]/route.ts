@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     // NEW: We expect an 'ownerId' and 'ownerEmail' in the body now
-    const { name, age, breed, gender, color, description, medicalHistory, imageUrls, ownerId, ownerEmail } = body;
+    const { name, age, breed, gender, color, description, medicalHistory, imageUrls, ownerId, ownerEmail} = body;
 
     const newCat = {
       name,

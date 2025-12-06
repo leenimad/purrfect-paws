@@ -74,7 +74,7 @@ export async function POST(request: Request) {
       status: 'Available',
       // Add the owner info (safely handle if undefined)
       ownerId: ownerId || 'admin', 
-      ownerEmail: ownerEmail || 'admin@purrfectpaws.com',
+      ownerEmail: ownerEmail || 'leeni.batta@gmail.com',
       ownerName: body.ownerName || 'Admin' // Default to 'Admin' if not provided
     };
 
@@ -105,19 +105,23 @@ export async function DELETE(request: Request) {
     const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');
 
-    if (!id) return NextResponse.json({ error: 'ID required' }, { status: 400 });
+    if (!id) {
+      return NextResponse.json({ error: 'ID is required' }, { status: 400 });
+    }
 
     const client = await clientPromise;
     const db = client.db('purrfect-paws');
 
-    // Delete the cat
-    await db.collection('cats').deleteOne({ _id: new ObjectId(id) });
-    
-    // Optional: Delete associated applications too
-    await db.collection('applications').deleteMany({ catId: new ObjectId(id) });
+    const result = await db.collection('cats').deleteOne({ 
+      _id: new ObjectId(id) 
+    });
 
-    return NextResponse.json({ success: true });
+    if (result.deletedCount === 0) {
+      return NextResponse.json({ error: 'Cat not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Cat deleted successfully' });
   } catch (e) {
-    return NextResponse.json({ error: 'Failed' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to delete cat' }, { status: 500 });
   }
 }
