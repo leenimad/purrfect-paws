@@ -38,6 +38,8 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
+import CatBot from '@/components/CatBot';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -61,8 +63,10 @@ export default function RootLayout({
           <main className="flex-grow container mx-auto px-6 py-8 pt-20">
             {children}
           </main>
+          <CatBot />
           <Footer />
         </div>
+
       </body>
     </html>
   );

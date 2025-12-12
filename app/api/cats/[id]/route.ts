@@ -63,3 +63,36 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Failed' }, { status: 500 });
   }
 }
+
+export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  try {
+    const { id } = await params;
+    const body = await request.json();
+    
+    // Validate ID
+    if (!ObjectId.isValid(id)) {
+        return NextResponse.json({ error: 'Invalid ID' }, { status: 400 });
+    }
+
+    // Remove the _id from the body so we don't try to update the immutable primary key
+    const { _id, ...updateData } = body;
+
+    const client = await clientPromise;
+    const db = client.db('purrfect-paws');
+
+    const result = await db.collection('cats').updateOne(
+        { _id: new ObjectId(id) },
+        { $set: updateData }
+    );
+
+    if (result.matchedCount === 0) {
+        return NextResponse.json({ error: 'Cat not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: 'Cat updated successfully' });
+
+  } catch (error) {
+    console.error("Update Error:", error);
+    return NextResponse.json({ error: 'Failed to update cat' }, { status: 500 });
+  }
+}
