@@ -4,6 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
 import { createClient } from '@supabase/supabase-js';
+// @ts-ignore
 import { MongoClient } from 'mongodb';
 
 // Load environment variables

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "set NODE_OPTIONS=--dns-result-order=ipv4first && next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -18,7 +18,7 @@
     "cowsay": "^1.6.0",
     "dotenv": "^17.2.3",
     "jspdf": "^3.0.4",
-    "mongodb": "^7.0.0",
+    "mongodb": "3.7",
     "mongoose": "^8.20.1",
     "next": "^16.0.7",
     "react": "^19.2.1",
@@ -28,6 +28,7 @@
     "resend": "^6.5.2"
   },
   "devDependencies": {
+    "@types/mongodb": "^4.0.7",
     "@types/node": "^20",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19",

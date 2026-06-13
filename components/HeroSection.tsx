@@ -7,7 +7,7 @@ import Image from 'next/image';
 export default function HeroSection() {
   const [user, setUser] = useState<any>(null);
   const [isAdmin, setIsAdmin] = useState(false);
-
+  
   useEffect(() => {
     const getUser = async () => {
       const { data: { user } } = await supabase.auth.getUser();
